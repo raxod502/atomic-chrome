@@ -207,7 +207,8 @@ TITLE is used for the buffer name and TEXT is inserted to the buffer."
              (list socket (atomic-chrome-show-edit-buffer buffer title))
              atomic-chrome-buffer-table)
       (atomic-chrome-set-major-mode url)
-      (insert text))))
+      (insert text)
+      (set-buffer-modified-p nil))))
 
 (defun atomic-chrome-close-edit-buffer (buffer)
   "Close buffer BUFFER if it's one of Atomic Chrome edit buffers."
